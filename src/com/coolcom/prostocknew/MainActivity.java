@@ -1,8 +1,7 @@
 package com.coolcom.prostocknew;
 
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -21,7 +20,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends FragmentActivity  {
 
 	private final Handler handler = new Handler();
 
@@ -46,7 +45,7 @@ public class MainActivity extends ActionBarActivity {
 		pager.setPageMargin(pageMargin);
 
 		tabs.setViewPager(pager);
-		//changeColor(currentColor);
+		changeColor(currentColor);
 	}
 
 	@Override
@@ -154,8 +153,7 @@ public class MainActivity extends ActionBarActivity {
 
 	public class MyPagerAdapter extends FragmentPagerAdapter {
 
-		private final String[] TITLES = { "Categories", "Home", "Top Paid", "Top Free", "Top Grossing", "Top New Paid",
-				"Top New Free", "Trending" };
+		private final String[] TITLES = { "指数", "股票", "基金", "国际期货", "港股" };
 
 		public MyPagerAdapter(FragmentManager fm) {
 			super(fm);
