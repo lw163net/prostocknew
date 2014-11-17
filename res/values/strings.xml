@@ -4,5 +4,8 @@
     <string name="app_name">股民</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-
+	
+    
+    <!-- layout string -->
+    <string name="simple_txtview">测试数据</string>
 </resources>

@@ -46,6 +46,8 @@ public class MainActivity extends FragmentActivity  {
 
 		tabs.setViewPager(pager);
 		changeColor(currentColor);
+		currentColor=0xFFF4842D;
+		changeColor(currentColor);
 	}
 
 	@Override

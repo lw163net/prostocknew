@@ -26,6 +26,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.FrameLayout.LayoutParams;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class SuperAwesomeCardFragment extends Fragment {
@@ -53,27 +54,52 @@ public class SuperAwesomeCardFragment extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
 		LayoutParams params = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
+		
+		LinearLayout mlinearlayout;
+		View view=null;
+		
+		switch (position) {
+		case 0:
+			
+			view= inflater.inflate(R.layout.stockindexmain,null);
+			break;
 
-		FrameLayout fl = new FrameLayout(getActivity());
-		fl.setLayoutParams(params);
+		default:
+			mlinearlayout=(LinearLayout)getActivity().findViewById(R.id.simple_linear);
+			
+			view = inflater.inflate(R.layout.simple, null);
+			
+			break;
+		}
+		return view;
+		//FrameLayout fl = new FrameLayout(getActivity());
+//		
+//		fl.setLayoutParams(params);
+//		
+//
+//		final int margin = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 8, getResources()
+//				.getDisplayMetrics());
+//
+//		TextView v = new TextView(getActivity());
+//		params.setMargins(margin, margin, margin, margin);
+//		v.setLayoutParams(params);
+//		v.setLayoutParams(params);
+//		v.setGravity(Gravity.CENTER);
+//		v.setBackgroundResource(R.drawable.background_card);
+//		v.setText("CARD " + (position + 1));
+
+		
 		
 
-		final int margin = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 8, getResources()
-				.getDisplayMetrics());
-
-		TextView v = new TextView(getActivity());
-		params.setMargins(margin, margin, margin, margin);
-		v.setLayoutParams(params);
-		v.setLayoutParams(params);
-		v.setGravity(Gravity.CENTER);
-		v.setBackgroundResource(R.drawable.background_card);
-		v.setText("CARD " + (position + 1));
-
+//		fl.addView(v);
+		//fl.addView(mlinearlayout);
+		//return fl;
 		
+	}
+	public View CreateViewSubStockIndex()
+	{
 		
-
-		fl.addView(v);
-		return fl;
+		return null;
 	}
 
 }
