@@ -29,11 +29,11 @@ public class IndexSimpleAdapter extends SimpleAdapter {
 	    TextView txtzssj=(TextView)v.findViewById(R.id.txtzssj);
 	    TextView labzssj=(TextView)v.findViewById(R.id.lablezssj);
 	    txtzssj.setTextColor(Color.BLACK);
-	    if(tempmc.equals("ä¸Šè¯æŒ‡æ•°")||tempmc.equals("æ·±è¯æˆæŒ‡")||tempmc.equals("æ²ªæ·±300")){
-	    	labzssj.setText("æˆäº¤é¢:");
+	    if(tempmc.equals("ÉÏÖ¤Ö¸Êı")||tempmc.equals("ÉîÖ¤³ÉÖ¸")||tempmc.equals("»¦Éî300")){
+	    	labzssj.setText("³É½»¶î:");
 	    }
 	    else
-	    	labzssj.setText("æ—¥æœŸ:");
+	    	labzssj.setText("ÈÕÆÚ:");
 	    
 	    int greencolor=Color.rgb(0, 130, 0);
 	    //int greencolor=Color.GREEN;

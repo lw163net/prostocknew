@@ -173,9 +173,22 @@ public class MainActivity extends FragmentActivity  {
 
 		@Override
 		public Fragment getItem(int position) {
-			
-			return SuperAwesomeCardFragment.newInstance(position);
+			Fragment fr=null;
+			switch (position) {
+			case 0:
+				fr=FragmentStockindex.newInstance();
+				
+				break;
+
+			default:
+				fr=SuperAwesomeCardFragment.newInstance(position);
+				break;
+			}
+			return fr;
+
 		}
+		
 
 	}
+	
 }

@@ -44,7 +44,7 @@ public class stockindex extends Activity {
 		SharedPreferences sp=getSharedPreferences("prostock",Context.MODE_PRIVATE);
 		String Stockid=sp.getString("strindex", "");
 		Stockindexid=Stockid;
-		bar1=(ProgressBar)findViewById(R.id.barstock);
+		//bar1=(ProgressBar)findViewById(R.id.barstock);
 		if(!Stockid.equals("")){
 			Responseindex(url+Stockindexid,getattr);
 		}

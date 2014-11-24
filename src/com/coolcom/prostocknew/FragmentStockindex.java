@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import android.app.AlertDialog;
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
@@ -33,19 +33,57 @@ public class FragmentStockindex extends Fragment {
 	String[] Allindexlist=null;
 	String tempa[]=null;
 	private ListView lv=null;
-	ProgressBar bar1=null;
+	//ProgressBar bar1=null;
+	public static FragmentStockindex newInstance() {
+		FragmentStockindex f = new FragmentStockindex();
+		return f;
+	}
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		getattr=1;
-		SharedPreferences sp=getActivity().getSharedPreferences("prostock",Context.MODE_PRIVATE);
+		
+	}
+	@Override public void onStart() {
+		super.onStart();
+		SharedPreferences sp=getActivity().getSharedPreferences("prostockold",Context.MODE_PRIVATE);
 		String Stockid=sp.getString("strindex", "");
 		Stockindexid=Stockid;
+		//Stockid=Stockindexid;
+		if(!Stockid.equals("")){
+			Responseindex(url+Stockindexid,getattr);
+		}
+		else
+		{
+			new AlertDialog.Builder(getActivity()).setTitle("没有自选指数,是否添加?")
+			.setPositiveButton("是的", new DialogInterface.OnClickListener() {
+				
+				@Override
+				public void onClick(DialogInterface dialog, int which) {
+					// TODO Auto-generated method stub
+					Addindex();
+				}
+			}).setNegativeButton("不要", new DialogInterface.OnClickListener() {
+				
+				@Override
+				public void onClick(DialogInterface dialog, int which) {
+					// TODO Auto-generated method stub
+					
+				}
+			}).show();
+			
+			
+		}
+		
 	}
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		return  null;
+		
+		View view=null;
+		view= inflater.inflate(R.layout.stockindexmain,null);
+		return view;
 	}
 	private void Addindex() {
 		// TODO Auto-generated method stub
@@ -87,7 +125,7 @@ public class FragmentStockindex extends Fragment {
 													}
 													if(!Stockindexid.equals(""))
 														Stockindexid=Stockindexid.substring(0, Stockindexid.length()-1);
-													SharedPreferences sp=getActivity().getSharedPreferences("prostock",Context.MODE_PRIVATE);
+													SharedPreferences sp=getActivity().getSharedPreferences("prostockold",Context.MODE_PRIVATE);
 									    	    	Editor editor=sp.edit();
 									    	    	editor.putString("strindex",Stockindexid);
 									    	    	editor.commit();
@@ -119,7 +157,7 @@ public class FragmentStockindex extends Fragment {
 		return items;
 	}
 	public  void  Responseindex(String tempurl,int attr){
-		bar1.setVisibility(View.VISIBLE);
+		
         thread=new GetStock(handlerindex);
        
         thread.doStart(tempurl,attr,getActivity());   
@@ -177,7 +215,6 @@ public class FragmentStockindex extends Fragment {
 												 ,new int[]{R.id.txtzsmc,R.id.txtzsds,R.id.txtzszdjs,R.id.txtzszdf,R.id.txtzssj});
 					stocklistview=(ListView)getActivity().findViewById(R.id.ListView01);
 					stocklistview.setAdapter(myAdapter);
-					bar1.setVisibility(View.GONE);
 					break;
 				}
 				catch(Exception e){

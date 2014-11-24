@@ -5,11 +5,11 @@
 	android:state_selected="false" 
 	android:state_pressed="false" /> 
 <item 
-	android:drawable="@drawable/hang_focus" 
+	android:drawable="@drawable/hang_noclick" 
 	android:state_selected="false" 
 	android:state_pressed="true" /> 
 <item 
-	android:drawable="@drawable/hang_noclick" 
+	android:drawable="@drawable/hang_focus" 
 	android:state_selected="true" /> 
 
 </selector>
