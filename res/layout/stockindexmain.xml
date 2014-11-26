@@ -9,11 +9,8 @@
 				<ListView android:id="@+id/ListView01" 
 						  android:layout_height="wrap_content" 
 						  android:layout_width="fill_parent"
-						   android:layout_marginLeft="5dp" 
-						   android:layout_marginRight="5dp" 
-						   android:layout_marginTop="5dp"
-						   android:layout_marginBottom="5dp"
-						   android:background="@drawable/inputover">
+
+						   android:background="@drawable/background_card">
 				</ListView>
 				
 </RelativeLayout>

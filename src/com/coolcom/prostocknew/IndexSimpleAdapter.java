@@ -21,43 +21,43 @@ public class IndexSimpleAdapter extends SimpleAdapter {
 	public View getView(int position, View convertView, ViewGroup parent) {  
 	    View v = super.getView(position, convertView, parent);  
 	    Map<String, Object> tempmap=items.get(position);
-	    float tempzde=Float.parseFloat((String) tempmap.get("zszdjs"));
-	    String tempmc=(String)tempmap.get("zsmc");
-	    TextView txtzsds=(TextView)v.findViewById(R.id.txtzsds);
-	    TextView txtzszdjs=(TextView)v.findViewById(R.id.txtzszdjs);
-	    TextView txtzszdf=(TextView)v.findViewById(R.id.txtzszdf);
-	    TextView txtzssj=(TextView)v.findViewById(R.id.txtzssj);
-	    TextView labzssj=(TextView)v.findViewById(R.id.lablezssj);
-	    txtzssj.setTextColor(Color.BLACK);
-	    if(tempmc.equals("上证指数")||tempmc.equals("深证成指")||tempmc.equals("沪深300")){
-	    	labzssj.setText("成交额:");
-	    }
-	    else
-	    	labzssj.setText("日期:");
-	    
-	    int greencolor=Color.rgb(0, 130, 0);
-	    //int greencolor=Color.GREEN;
-	    if(!(tempzde==0)){
-		    if(tempzde>0.00f){
-		    	txtzsds.setTextColor(Color.RED);
-		    	txtzszdjs.setTextColor(Color.RED);
-		    	txtzszdf.setTextColor(Color.RED);
-		    }
-		    else{
-		    	txtzsds.setTextColor(greencolor);
-		    	txtzszdjs.setTextColor(greencolor);
-		    	txtzszdf.setTextColor(greencolor);
-		    	
-
-		    }
-	    }
-	    else{
-	    	txtzsds.setTextColor(Color.BLACK);
-	    	txtzszdjs.setTextColor(Color.BLACK);
-	    	txtzszdf.setTextColor(Color.BLACK);
-	    }
-	
-	    
+//	    float tempzde=Float.parseFloat((String) tempmap.get("zszdjs"));
+//	    String tempmc=(String)tempmap.get("zsmc");
+//	    TextView txtzsds=(TextView)v.findViewById(R.id.txtindexds);
+//	    TextView txtzszdjs=(TextView)v.findViewById(R.id.txtindexzdjs);
+//	    TextView txtzszdf=(TextView)v.findViewById(R.id.txtindexzdf);
+//	    TextView txtzssj=(TextView)v.findViewById(R.id.txtindexsj);
+//	    TextView labzssj=(TextView)v.findViewById(R.id.lablezssj);
+//	    txtzssj.setTextColor(Color.BLACK);
+//	    if(tempmc.equals("上证指数")||tempmc.equals("深证成指")||tempmc.equals("沪深300")){
+//	    	labzssj.setText("成交额:");
+//	    }
+//	    else
+//	    	labzssj.setText("日期:");
+//	    
+//	    int greencolor=Color.rgb(0, 130, 0);
+//	    //int greencolor=Color.GREEN;
+//	    if(!(tempzde==0)){
+//		    if(tempzde>0.00f){
+//		    	txtzsds.setTextColor(Color.RED);
+//		    	txtzszdjs.setTextColor(Color.RED);
+//		    	txtzszdf.setTextColor(Color.RED);
+//		    }
+//		    else{
+//		    	txtzsds.setTextColor(greencolor);
+//		    	txtzszdjs.setTextColor(greencolor);
+//		    	txtzszdf.setTextColor(greencolor);
+//		    	
+//
+//		    }
+//	    }
+//	    else{
+//	    	txtzsds.setTextColor(Color.BLACK);
+//	    	txtzszdjs.setTextColor(Color.BLACK);
+//	    	txtzszdf.setTextColor(Color.BLACK);
+//	    }
+//	
+//	    
 	    return v;  
 	} 
 }

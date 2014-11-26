@@ -210,9 +210,9 @@ public class FragmentStockindex extends Fragment {
 						stocklist.add(tempstock);
 					}
 					List<Map<String, Object>> items=fillmap();
-					IndexSimpleAdapter myAdapter= new IndexSimpleAdapter(getActivity(),items,R.layout.stockindex
+					IndexSimpleAdapter myAdapter= new IndexSimpleAdapter(getActivity(),items,R.layout.stockindexnew
 												 ,new String[]{"zsmc","zsds","zszdjs","zszdf","zssj"}
-												 ,new int[]{R.id.txtzsmc,R.id.txtzsds,R.id.txtzszdjs,R.id.txtzszdf,R.id.txtzssj});
+												 ,new int[]{R.id.txtindexmc,R.id.txtindexds,R.id.txtindexzdjs,R.id.txtindexzdf,R.id.txtindexsj});
 					stocklistview=(ListView)getActivity().findViewById(R.id.ListView01);
 					stocklistview.setAdapter(myAdapter);
 					break;
